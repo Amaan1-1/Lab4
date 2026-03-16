@@ -18,35 +18,34 @@
 </head>
 
 <body>
-    <!-- Navigation bar linking to other pages-->
     <nav class="navbar">
         <a href="index.html" class="nav-link">Home</a>
         <a href="analysis.html" class="nav-link">Analysis</a>
     </nav>
     
-    
-    <div class="header">
-        <!--This header provides map title, brief description, and reset button-->
-        <h1>Toronto Pedestrian & Cyclist Collisions</h1>
-        <p>
-            This map aggregates collision data from 2006 to 2021 into a 0.5km hexgrid.
-            Darker reds indicate higher concentrations of incidents.
-        </p>
-        <!-- Button resets the map view to its default center and zoom -->
-        <button id="reset-btn" class="visualize_button">Reset Map View</button>
-    </div>
+    <div class="analysis-panel">
+        <h3>Spatial Tools</h3>
+        
+        <div class="tool-section">
+            <p>Distance between Points</p>
+            <!-- Buttons set up for choosing point 1 or point 2-->
+            <button id="point1" class="analysis-btn">Set Point 1</button>
+            <button id="point2" class="analysis-btn">Set Point 2</button>
+            <br>
+            <!-- Dynamic distance display updated using Turf.distance() function-->
+            <p>Distance: <span id="distance-output">0</span> km</p>
+        </div>
 
-    <!-- Legend container - dynamically populated in script.js-->
-    <div class="legend" id="legend">
-        <h4>Collision Intensity</h4>
+        <br>
+        <!-- Reset button restores map to default Toronto-centered view and zoom level -->
+        <button id="reset-btn" class="analysis-btn">Reset Map View</button>
     </div>
+    <!-- Coordinates display on right side of screen -->
+    <div id="coordinate-display" class="coordinate-info2">Longitude: -79.39 | Latitude: 43.65</div>
 
-    <!-- a real time coordinate display which updates on mouse movement -->
-    <div id="coordinate-display" class="coordinate-info">Longitude: -79.39 | Latitude: 43.65</div>
     <!-- MAP CONTAINER -->
     <div id='map' class='map'></div>
 
-    <!-- JavaScript files: main logic and helper functions -->
     <script src="./scripts/script.js"></script>
     <script src="./scripts/functions.js"></script>
 
