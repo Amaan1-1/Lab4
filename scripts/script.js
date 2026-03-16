@@ -54,7 +54,6 @@ map.on('load', () => {
                 // Update the maximum collision count
                 if (feature.properties.COUNT > maxcolisions){
                     maxcolisions = feature.properties.COUNT;
-                    console.log("Max collisions in a hexagon:" + maxcolisions);
                 }
             });
 
@@ -96,8 +95,6 @@ map.on('load', () => {
                 },
                 'paint': {
                     'line-color':"#000000",
-                    'line-stroke-width': 5.5,
-                    'line-stroke-color': '#ffffff',
                     'line-width': 8,
                     'line-opacity': 1.0
                 },
