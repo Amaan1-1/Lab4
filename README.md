@@ -1,6 +1,6 @@
 # GGR472 Lab 4: Toronto Collision Analysis
 
-This project is an interactive web map designed to visualize and analyze pedestrian and cyclist collision data within the City of Toronto from 2006 to 2021. The application uses spatial aggregation to identify high-density incident areas and provides tools for basic proximity analysis.
+This project is an interactive web map designed to visualize and analyze pedestrian and cyclist collision data within the City of Toronto from 2006 to 2021. The webpage uses spatial aggregation to identify high-density incident areas and provides tools for basic proximity analysis.
 
 ## Core Features
 * **Hexagonal Aggregation:** Point data is dynamically binned into a 0.5km hexgrid. The map uses an interpolation scale to color-code hexagons based on the density of collisions.
