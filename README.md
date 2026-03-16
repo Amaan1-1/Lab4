@@ -19,6 +19,5 @@ This project is an interactive web map designed to visualize and analyze pedestr
 ## Technical Implementation
 * **Mapbox GL JS:** Utilized for rendering the map tiles and its API was used to handle user interaction events and manage layer visibility
 * **Turf.js:** The primary engine for spatial analysis. It is used to create the hexgrid, calculate distances between two points
-* **Data Handling:** The application uses the Fetch API to load GeoJSON data
-
+* **Data Handling:** The application uses the Fetch API to load GeoJSON data from this github repository.
 
