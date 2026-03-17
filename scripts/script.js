@@ -78,9 +78,9 @@ map.on('load', () => {
                 'paint': {
                     'circle-radius': 5,
                     'circle-color':"#2dff03",
-                    'circle-stroke-width': 1.5,
-                    'circle-emissive-strength': 1.1,
-                    'circle-stroke-color': '#ffffff'
+                    'circle-stroke-width': 1.5, // white outline
+                    'circle-emissive-strength': 1.1, //glow effect
+                    'circle-stroke-color': '#ffffff' //white stroke
                 }
             });
 
@@ -91,13 +91,13 @@ map.on('load', () => {
                 'type': 'line',
                 'source': 'input-data',
                 'layout': {
-                    'line-cap': 'round',
+                    'line-cap': 'round', // Rounded corners
                     'line-join': 'round'
                 },
                 'paint': {
                     'line-color':"#000000",
-                    'line-width': 8,
-                    'line-opacity': 1.0
+                    'line-width': 8, // Thick line
+                    'line-opacity': 1.0 // Full opacity for max visibility
                 },
             });
 
@@ -106,17 +106,17 @@ map.on('load', () => {
                 id: "collishexfill",
                 type: "fill",
                 source: "collishexgrid",
-                paint: {
+                paint: { //color ramp based on collision COUNT (0 = white and max = red)
                     "fill-color": [
                         "interpolate",
                         ["linear"],
-                        ["get", "COUNT"],
-                        0, "#ffffff",
-                        1, "#ffebf1",
-                        6, "#ffb7ce",
-                        16, "#ff2163",
-                        31, "#ff0000",
-                        maxcolisions, "#ff0000"
+                        ["get", "COUNT"],// Use COUNT property from each hexagon
+                        0, "#ffffff", // 0 collisions = white (empty)
+                        1, "#ffebf1",  // 1-5 = light pink
+                        6, "#ffb7ce", // 6-15 = medium pink 
+                        16, "#ff2163", // 16-30 = bright pink
+                        31, "#ff0000", // 31+ = red
+                        maxcolisions, "#ff0000" //max = solid red
                     ],
                     "fill-opacity": 0.6,
                     "fill-outline-color": "white",
@@ -126,7 +126,6 @@ map.on('load', () => {
             });
 
             
-            // Initialize UI components and spatial analysis layers
             addLegend(map, maxcolisions);// Dynamic collision intensity legend
             addPopup(map, "collishexfill"); // Click/hover popups for hexagons
 
