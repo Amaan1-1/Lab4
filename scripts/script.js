@@ -50,8 +50,9 @@ map.on('load', () => {
 
             // Loop through each hexagon to count how many collisions it contains
             collishex.features.forEach((feature) =>{
+                // COUNT is number of collision points in this hexagon's values array
                 feature.properties.COUNT = feature.properties.values.length;
-                // Update the maximum collision count
+                // Update the maximum collision count if count is more
                 if (feature.properties.COUNT > maxcolisions){
                     maxcolisions = feature.properties.COUNT;
                 }

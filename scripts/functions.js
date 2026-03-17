@@ -22,16 +22,12 @@ function addPopup(map, layerId){
     // Reset cursor when leaving the feature
     map.on('mouseleave', layerId, () => {
         map.getCanvas().style.cursor = '';
+        map.setPaintProperty(layerId, 'fill-opacity', 0.6);
     });
 
     // Add a hover effect by increasing opacity of all hexagons 
     map.on('mousemove', layerId, () => {
         map.setPaintProperty(layerId, 'fill-opacity', 0.9);
-    });
-
-    //once mouse moves return back to original opacity
-    map.on('mouseleave', layerId, () => {
-        map.setPaintProperty(layerId, 'fill-opacity', 0.6);
     });
         
 }
