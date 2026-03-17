@@ -117,12 +117,13 @@ function addLegend(map, maxcollisions){
         legend.appendChild(row); // Add row into main legend container
     });
 
-    // Add an interactive button for toggling hex visibility
+    // Create an interactive button for toggling hex visibility
     const button = document.createElement("button");
     button.textContent = "Hide";
     button.id = "hex-toggle";
     button.className = "hide_button";
     legend.appendChild(button);
+    //add toggle button functionality using UpdateVisibility method
     UpdateVisibility(button.id, "collishexfill", map);
 
 
